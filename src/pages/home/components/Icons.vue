@@ -16,6 +16,7 @@
 
 <style lang="stylus" scoped>
   @import '~styles/variables.styl'
+  @import '~styles/ellipsis.styl'
   .icons
     overflow: hidden
     width: 100%
@@ -47,6 +48,7 @@
         line-height: .44rem
         text-align: center
         color: $darkColor
+        ellipsis()
 </style>
 <!--
 , -->
@@ -101,7 +103,6 @@ export default {
         }
         pages[page].push(el)
       })
-      console.log(pages)
       return pages
     }
   }
