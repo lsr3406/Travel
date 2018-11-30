@@ -50,6 +50,6 @@
 
 <script type="text/javascript">
 export default {
-  name: 'Header'
+  name: 'HomeHeader'
 }
 </script>
