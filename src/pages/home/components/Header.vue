@@ -7,10 +7,12 @@
       <span class="iconfont icon-scope">&#xe60c;</span>
       <span class="search-text">请输入要搜索的内容</span>
     </div>
-    <div class="header-right">
-      {{this.city}}
-      <span class="iconfont icon-dropdown">&#xe654;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont icon-dropdown">&#xe654;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -18,7 +20,7 @@
   @import '~styles/variables.styl'
   .header
     display: flex
-    line-height: .86rem
+    line-height: $headerHeight
     background-color: $bgColorTheme
     color: #fff
     font-size: 1.1em
@@ -27,7 +29,7 @@
       width: .64rem
       text-align: center
       .icon-back
-        font-size: .48rem
+        font-size: .42rem
         margin-left: .1rem
     .header-content
       flex: 1
@@ -44,6 +46,7 @@
       float: right
       width: 1.24rem
       text-align: center
+      color: #fff
       .icon-dropdown
         margin-left: -.1rem
 </style>
