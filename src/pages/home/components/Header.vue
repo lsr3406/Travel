@@ -8,7 +8,7 @@
       <span class="search-text">请输入要搜索的内容</span>
     </div>
     <div class="header-right">
-      杭州
+      {{this.city}}
       <span class="iconfont icon-dropdown">&#xe654;</span>
     </div>
   </div>
@@ -50,6 +50,9 @@
 
 <script type="text/javascript">
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  props: {
+    city: String
+  }
 }
 </script>

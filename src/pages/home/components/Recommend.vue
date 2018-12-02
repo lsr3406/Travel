@@ -62,34 +62,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data: function () {
-    return {
-      recommendList: [{
-        id: '0001',
-        name: '杭州动物园',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/95/95db58d0da425616.water.jpg_200x200_631da622.jpg',
-        alt: '杭州动物园',
-        desc: '杭州动物园'
-      }, {
-        id: '0002',
-        name: '杭州海底世界',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201212/18/f195032e85740a4b93835fbb.jpg_200x200_77761d11.jpg',
-        alt: '杭州海底世界',
-        desc: '杭州海底世界'
-      }, {
-        id: '0003',
-        name: '印象西湖',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1709/28/288fbeccc335f774a3.img.jpg_200x200_4a81bde9.jpg',
-        alt: '印象西湖',
-        desc: '印象西湖'
-      }, {
-        id: '0004',
-        name: '杭州野生动物世界',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1411/b6/662fc49d1d26a5a7775cf6b7f8b4ecec.water.jpg_200x200_7dec115f.jpg',
-        alt: '杭州野生动物世界',
-        desc: '杭州野生动物世界'
-      }]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>
