@@ -2,8 +2,8 @@
   <div class="city">
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :currentCity="this.currentCity" :cities="this.cities" :hotCities="this.hotCities"></city-list>
-    <city-alphabet></city-alphabet>
+    <city-list :currentCity="this.currentCity" :cities="this.cities" :hotCities="this.hotCities" :letter="this.letter"></city-list>
+    <city-alphabet :cities="this.cities" @letterChange="onLetterChange"></city-alphabet>
   </div>
 </template>
 
@@ -26,6 +26,7 @@ export default {
   },
   data () {
     return {
+      letter: '',
       currentCity: '',
       cities: {},
       hotCities: []
@@ -56,6 +57,9 @@ export default {
     },
     getCityInfoFail () {
       console.log('failed')
+    },
+    onLetterChange (e) {
+      this.letter = e
     }
   },
   mounted () {

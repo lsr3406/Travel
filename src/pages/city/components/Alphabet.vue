@@ -1,32 +1,16 @@
 <template>
   <div class="alphabet">
     <ul class="list">
-      <li class="item">A</li>
-      <li class="item">B</li>
-      <li class="item">C</li>
-      <li class="item">D</li>
-      <li class="item">E</li>
-      <li class="item">F</li>
-      <li class="item">G</li>
-      <li class="item">H</li>
-      <li class="item">I</li>
-      <li class="item">J</li>
-      <li class="item">K</li>
-      <li class="item">L</li>
-      <li class="item">M</li>
-      <li class="item">N</li>
-      <li class="item">O</li>
-      <li class="item">P</li>
-      <li class="item">Q</li>
-      <li class="item">R</li>
-      <li class="item">S</li>
-      <li class="item">T</li>
-      <li class="item">U</li>
-      <li class="item">V</li>
-      <li class="item">W</li>
-      <li class="item">X</li>
-      <li class="item">Y</li>
-      <li class="item">Z</li>
+      <li class="item"
+          v-for="(item, key) of cities"
+          :key="key"
+          :ref="key"
+          @touchstart = "onTouchStart"
+          @touchmove = "onTouchMove"
+          @touchend = "onTouchEnd"
+          @click="onLetterClick">
+        {{key}}
+      </li>
     </ul>
   </div>
 </template>
@@ -51,6 +35,44 @@
 
 <script type="text/javascript">
 export default {
-  name: 'CityAlphabet'
+  name: 'CityAlphabet',
+  props: {
+    cities: Object
+  },
+  data () {
+    return {
+      touchStatus: false
+    }
+  },
+  computed: {
+    letters () {
+      const letters = []
+      for (let i in this.cities) {
+        letters.push(i)
+      }
+      return letters
+    }
+  },
+  methods: {
+    onLetterClick (e) {
+      this.$emit('letterChange', e.target.innerText)
+    },
+    onTouchStart (e) {
+      this.touchStatus = true
+    },
+    onTouchMove (e) {
+      if (this.touchStatus) {
+        const startY = this.$refs['A'][0].offsetTop
+        const touchY = e.touches[0].clientY - 68
+        const index = Math.floor((touchY - startY) / 20)
+        if (index >= 0 && index <= this.letters.length) {
+          this.$emit('letterChange', this.letters[index])
+        }
+      }
+    },
+    onTouchEnd (e) {
+      this.touchStatus = false
+    }
+  }
 }
 </script>
