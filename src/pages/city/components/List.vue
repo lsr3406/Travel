@@ -38,6 +38,7 @@
     &:before
       border-color: #ccc
   .list
+    z-index: 0
     position: absolute
     overflow: hidden
     top: 1.5rem
@@ -52,7 +53,7 @@
         line-height: .44rem
         background-color: #eee
         font-size: .28rem
-        text-indent: 0.2rem
+        text-indent: .2rem
         color: #666
       .button-list
         overflow: hidden
