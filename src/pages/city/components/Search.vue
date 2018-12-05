@@ -7,7 +7,7 @@
       <ul class="search-list" >
         <li class="search-item border-topbottom"
             v-for="item of this.list"
-            :key="item.id">
+            :key="item.id" @click="handleCityClick(item.name)">
           {{item.name}}
         </li>
         <li class="search-item" v-show="this.findNothing">没有找到匹配项</li>
@@ -52,6 +52,7 @@
 
 <script type="text/javascript">
 import BScroll from 'better-scroll'
+import { mapActions } from 'vuex'
 export default {
   name: 'CitySearch',
   props: {
@@ -63,6 +64,14 @@ export default {
       list: [],
       timer: null
     }
+  },
+  methods: {
+    handleCityClick (city) {
+      // this.$store.dispatch('changeCity', city)
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapActions(['changeCity'])
   },
   computed: {
     showSearchList () {
