@@ -72,10 +72,14 @@ export default {
     handleScroll () {
       const top = document.documentElement.scrollTop
       this.opacityStyle.opacity = (top - 60) / (140 - 60)
+      console.log('scroll')
     }
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
