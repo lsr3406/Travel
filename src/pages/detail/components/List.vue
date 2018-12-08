@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <div class="item border-bottom" v-for="item of list" :key="item.id">
+    <div class="item border-bottom" v-for="item of categoryList" :key="item.id">
       <div class="item-title">
         <span class="item-icon"></span>
         {{item.name}}
@@ -37,7 +37,7 @@
 export default {
   name: 'DetailList',
   props: {
-    list: Array,
+    categoryList: Array,
     default: []
   }
 }

@@ -1,0 +1,15 @@
+{
+    "ret": true,
+    "data": {
+        "sightName": "杭州动物园(AAAA景区)",
+        "bannerImg": "http://img1.qunarzz.com/sight/p0/1505/95/95db58d0da425616.water.jpg_600x330_8e2d4d17.jpg",
+        "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/1505/95/95db58d0da425616.water.jpg_600x330_8e2d4d17.jpg", "http://img1.qunarzz.com/sight/p0/201405/29/5804a2ec43c8812215f72ea4dffac916.jpg_350x240_15880e07.jpg", "http://img1.qunarzz.com/sight/p0/1408/19/be26485d21261e77cbdb0993fd06fc39.jpg_350x240_9d2379ef.jpg", "https://imgs.qunarzz.com/sight/p0/1503/fb/fb19a69156071622.water.jpg_350x240_458c8db4.jpg", "http://img1.qunarzz.com/sight/p0/201405/29/aa51058553eff015101372223f3d1b00.jpg_350x240_945193cf.jpg", "http://img1.qunarzz.com/sight/p0/201405/29/057849cad733b806bba3d749e83557d5.jpg_350x240_aec1a3d5.jpg", "http://img1.qunarzz.com/sight/p0/201212/19/19ccfddfbeaf510593835fbb.jpg_350x240_6794ca81.jpg", "http://img1.qunarzz.com/sight/p0/201212/19/25910b51e5f0787193835fbb.jpg_350x240_9cd8194c.jpg"],
+        "categoryList": [{
+            "id": "0001",
+            "name": "杭州动物园成人票"
+        }, {
+            "id": "0002",
+            "name": "杭州动物园双人票"
+        }]
+    }
+}

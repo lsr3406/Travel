@@ -32,6 +32,7 @@
       .icon-back
         font-size: .5rem
     .header-fixed
+      z-index: 2
       overflow: hidden
       position: fixed
       display: flex
@@ -64,7 +65,7 @@ export default {
   data () {
     return {
       opacityStyle: {
-        opacity: 0
+        opacity: 0.8
       }
     }
   },
@@ -72,10 +73,10 @@ export default {
     handleScroll () {
       const top = document.documentElement.scrollTop
       this.opacityStyle.opacity = (top - 60) / (140 - 60)
-      console.log('scroll')
     }
   },
   activated () {
+    console.log('asdf')
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {

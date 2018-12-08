@@ -1,8 +1,8 @@
 <template>
   <div class="detail">
-    <detail-banner></detail-banner>
+    <detail-banner :sightName="sightName"  :bannerImg="bannerImg"  :gallaryImgs="gallaryImgs"></detail-banner>
     <detail-header></detail-header>
-    <detail-list :list="list"></detail-list>
+    <detail-list :categoryList="categoryList"></detail-list>
   </div>
 </template>
 
@@ -16,6 +16,7 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'
 export default {
   name: 'Detail',
   components: {
@@ -25,21 +26,35 @@ export default {
   },
   data: function () {
     return {
-      list: [{
-        id: '0001',
-        name: '成人票',
-        children: [{
-          id: '0010',
-          name: 'child-1'
-        }, {
-          id: '0011',
-          name: 'child-2'
-        }]
-      }, {
-        id: '0002',
-        name: '学生票'
-      }]
+      sightName: '',
+      bannerImg: '',
+      gallaryImgs: [],
+      categoryList: []
     }
+  },
+  methods: {
+    getDetailInfo () {
+      axios.get('/api/detail.json', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.getDetailSucc, this.getDetailFail)
+    },
+    getDetailSucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        this.sightName = res.data.sightName
+        this.bannerImg = res.data.bannerImg
+        this.gallaryImgs = res.data.gallaryImgs
+        this.categoryList = res.data.categoryList
+      }
+    },
+    getDetailFail () {
+      console.log('Fail')
+    }
+  },
+  mounted () {
+    this.getDetailInfo()
   }
 }
 </script>
