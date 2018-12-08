@@ -65,7 +65,7 @@ export default {
   data () {
     return {
       opacityStyle: {
-        opacity: 0.8
+        opacity: 0
       }
     }
   },
@@ -75,11 +75,10 @@ export default {
       this.opacityStyle.opacity = (top - 60) / (140 - 60)
     }
   },
-  activated () {
-    console.log('asdf')
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   },
-  deactivated () {
+  beforeDestory () {
     window.removeEventListener('scroll', this.handleScroll)
   }
 }
