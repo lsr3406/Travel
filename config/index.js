@@ -10,15 +10,24 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
+    // 使用 nodejs 作后端
+    // proxyTable: {
+    //     '/api': {
+    //         target: 'http://localhost:8080',
+    //         pathRewrite: {
+    //             '^/api': '/static/mock'
+    //         }
+    //     }
+    // },
+    // 使用 php 作后端
     proxyTable: {
         '/api': {
-            target: 'http://localhost:8080',
+            target: 'http://localhost:80',
             pathRewrite: {
                 '^/api': '/static/mock'
             }
         }
     },
-
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
     port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
