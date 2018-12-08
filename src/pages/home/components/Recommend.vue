@@ -2,14 +2,14 @@
   <div>
     <div class="title">热销推荐</div>
     <ul class="recommend">
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <router-link tag="li" class="item border-bottom" v-for="item of recommendList" :key="item.id" :to="'/detail/' + item.id">
         <img class="item-img" :src="item.imgUrl" :alt="item.alt">
         <div class="item-info">
           <p class="item-title">{{item.name}}</p>
           <p class="item-desc">{{item.desc}}</p>
           <button class="item-button" type="button">查看详情</button>
         </div>
-      </li>
+      </router-link>
     </ul>
     <a class="show-all border-top border-bottom" href="javascript:void(0)">查看所有产品</a>
   </div>
@@ -38,7 +38,7 @@
       .item-title
         line-height: .54rem
         font-size: .32rem
-        margin-top: 0.3rem
+        margin-top: .3rem
         ellipsis()
       .item-desc
         line-height: .4rem
